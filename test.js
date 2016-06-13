@@ -11,4 +11,10 @@ checkCarousel({
 		clientSecret: process.env.CLIENT_SECRET,
 		refreshToken: process.env.REFRESH_TOKEN,
 	},
+	excludeQueries: [
+		'financial times',
+		'ft',
+		'ft.com',
+		'financialtimes',
+	],
 }).then(a => util.inspect(a, {depth: null}), e => e.stack).then(console.log);

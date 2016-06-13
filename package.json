@@ -28,12 +28,9 @@
     "dotenv": "^2.0.0"
   },
   "dependencies": {
-    "@quarterto/gaussian": "^1.0.0",
     "babel-runtime": "^6.9.2",
     "google-api-client": "^2.0.5",
     "google-carousel-scraper": "^1.1.5",
-    "lodash.groupby": "^4.3.0",
-    "lodash.mapvalues": "^4.3.0",
     "moment": "^2.13.0"
   }
 }

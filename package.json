@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepublish": "make",
     "test": "babel-node test.js"
   },
   "repository": {

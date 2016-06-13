@@ -1,8 +1,8 @@
 import carouselScraper from 'google-carousel-scraper';
 
-export default async function(searchTerm, publisher) {
-	return (await carouselScraper(searchTerm)).filter((link, i) => {
+export default async function(searchTerm) {
+	return (await carouselScraper(searchTerm)).map((link, i) => {
 		link.position = i;
-		return link.publisher === publisher;
+		return link;
 	});
 };

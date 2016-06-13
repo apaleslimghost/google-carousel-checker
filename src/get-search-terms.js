@@ -4,8 +4,7 @@ import getAccessToken from './access-token';
 
 export default async function(options) {
 	const {accessToken, clientId} = await getAccessToken(options.auth);
-	let o;
-	const results = await webmasters.searchAnalytics.query('www.ft.com', {
+	const results = await webmasters.searchAnalytics.query(options.searchAnalyticsUrl, {
 		endDate: moment().format('YYYY-MM-DD'),
 		startDate: moment().subtract(1, 'week').format('YYYY-MM-DD'),
 		dimensions: ['query'],

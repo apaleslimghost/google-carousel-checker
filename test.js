@@ -3,6 +3,7 @@ import checkCarousel from './src';
 import util from 'util';
 
 checkCarousel({
+	searchAnalyticsUrl: 'www.ft.com',
 	query: {
 		rowLimit: 5,
 	},

@@ -1,3 +1,6 @@
 {
-  "extends": "@quarterto/eslint-config-matt"
+  "extends": "@quarterto/eslint-config-matt",
+  "rules": {
+    "no-param-reassign": ["error", {"props": false}]
+  }
 }

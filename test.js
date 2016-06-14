@@ -5,7 +5,7 @@ import util from 'util';
 checkCarousel({
 	searchAnalyticsUrl: 'www.ft.com',
 	query: {
-		rowLimit: 5,
+		rowLimit: 8,
 	},
 	auth: {
 		clientId: process.env.CLIENT_ID,
@@ -18,4 +18,4 @@ checkCarousel({
 		'ft.com',
 		'financialtimes',
 	],
-}).then(a => util.inspect(a, {depth: null}), e => e.stack).then(console.log);
+}).then(a => util.inspect(a, {depth: null}), e => e.stack);// .then(console.log);

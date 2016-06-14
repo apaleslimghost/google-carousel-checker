@@ -30,7 +30,9 @@
     "dotenv": "^2.0.0"
   },
   "dependencies": {
+    "@quarterto/fancy-gauge": "^1.2.0",
     "babel-runtime": "^6.9.2",
+    "gauge": "^2.5.1",
     "google-api-client": "^2.0.5",
     "google-carousel-scraper": "^1.1.5",
     "moment": "^2.13.0"

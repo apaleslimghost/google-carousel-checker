@@ -5,12 +5,13 @@ import getAccessToken from './access-token';
 export default async function(options) {
 	options.gauge.show('get-search-terms', 0);
 
-	const {accessToken, clientId} = await getAccessToken(options.auth);
 	options.gauge.pulse('get-access-token');
+	const {accessToken, clientId} = await getAccessToken(options.auth);
 
+	options.gauge.pulse('searchAnalytics.query');
 	const results = await webmasters.searchAnalytics.query(options.searchAnalyticsUrl, {
 		endDate: moment().format('YYYY-MM-DD'),
-		startDate: moment().subtract(1, 'week').format('YYYY-MM-DD'),
+		startDate: moment().subtract(1, 'year').format('YYYY-MM-DD'),
 		dimensions: ['query'],
 		dimensionFilterGroups: [{
 			groupType: 'and',
@@ -29,7 +30,6 @@ export default async function(options) {
 		}],
 		...options.query,
 	}, accessToken, clientId);
-	options.gauge.pulse('searchAnalytics.query');
 
 	if(!results[1].rows) {
 		throw new Error('Not enough data from Google search analytics');
